@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: gundam
+      POSTGRES_USER: gundam_user
+      POSTGRES_PASSWORD: gundam_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - gundam_data:/var/lib/postgresql/data
+
+volumes:
+  gundam_data:
