@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS cards (
     rarity TEXT NOT NULL,
     alt_art TEXT NOT NULL DEFAULT '',
     scraped_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    UNIQUE(card_code, rarity, alt_art)
+    UNIQUE(set_id, card_code, rarity, alt_art)
 );
 
 CREATE TABLE IF NOT EXISTS traits (

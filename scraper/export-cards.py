@@ -21,20 +21,26 @@ def derive_code(card_code, alt_art, image_url):
     """
     Derive a unique card code from the image URL filename,
     mirroring Bandai's own naming convention exactly.
-    e.g. GD01-001        (base)
-         GD01-001_p1     (+)
-         GD01-001_p2     (++)
+    e.g. GD01-001        (base, first printing)
+         GD01-001_p1     (+, or a later reprint of the base rarity)
+         GD01-001_p2     (++, or a later reprint)
          GD01-001_SP     (SP)
-    """
-    if not alt_art:
-        return card_code
 
+    The "_pN" suffix is a running reprint counter, not tied to alt_art —
+    a plain base-rarity (alt_art == "") reprint can still carry a "_pN"
+    suffix once that card_code has been printed more than once. So the
+    image_url lookup must run regardless of alt_art; only fall back to
+    the symbolic alt_art mapping if image_url is missing entirely.
+    """
     # Extract filename stem from image URL
     # e.g. "../images/cards/card/GD01-001_p1.webp?260612" -> "GD01-001_p1"
     match = re.search(r'/([^/]+)\.webp', image_url or '')
     if match:
         stem = match.group(1).split('?')[0]
         return stem
+
+    if not alt_art:
+        return card_code
 
     # Fallback if image URL is missing
     if alt_art == '+':
@@ -116,8 +122,13 @@ def export():
         traits = traits_by_card.get(card_id, [])
         links = links_by_card.get(card_id, [])
 
+        # Fold set code into the id: the same card_code/alt_art/rarity can
+        # legitimately appear in multiple sets (reprints), so `code` alone
+        # is not unique across the whole export — set_code makes it so.
+        card_id = f"{row['set_code']}-{code}"
+
         cards.append({
-            "id": code,                                    # use derived code as stable ID
+            "id": card_id,                                 # set-qualified, stable, unique ID
             "code": code,
             "cardCode": row['card_code'],                  # original e.g. GD01-001
             "altArt": alt_art,                             # "", "+", "++", "SP"

@@ -40,7 +40,7 @@ def upsert_card(conn, card_data):
                 %(level)s, %(cost)s, %(ap)s, %(hp)s, %(effect_text)s,
                 %(source_title)s, %(image_url)s, %(rarity)s, %(alt_art)s, NOW()
             )
-            ON CONFLICT (card_code, rarity, alt_art) DO UPDATE SET
+            ON CONFLICT (set_id, card_code, rarity, alt_art) DO UPDATE SET
                 name = EXCLUDED.name,
                 card_type = EXCLUDED.card_type,
                 color = EXCLUDED.color,
