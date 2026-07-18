@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS cards (
     effect_text TEXT,
     source_title TEXT,
     image_url TEXT,
+    hosted_image_url TEXT,
     rarity TEXT NOT NULL,
     alt_art TEXT NOT NULL DEFAULT '',
     scraped_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),

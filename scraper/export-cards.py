@@ -83,6 +83,7 @@ def export():
                 c.effect_text,
                 c.source_title,
                 c.image_url,
+                c.hosted_image_url,
                 s.name AS set_name,
                 s.set_code
             FROM cards c
@@ -110,7 +111,15 @@ def export():
     for row in rows:
         card_id = row['id']
         code = derive_code(row['card_code'], row['alt_art'], row['image_url'])
-        image = derive_image_url(row['image_url'])
+
+        # imageSmall/imageLarge must point at our own hosted copy, never at
+        # Bandai's CDN — Bandai sends Cross-Origin-Resource-Policy: same-site,
+        # which blocks LinkPear (a different origin) from loading the image
+        # at all (ERR_BLOCKED_BY_RESPONSE.NotSameSite). hosted_image_url is
+        # populated at scrape time (see image_host.py); the Bandai URL is
+        # kept only as a last-resort fallback for any row that predates this
+        # fix and hasn't been backfilled yet (run backfill_images.py).
+        image = row['hosted_image_url'] or derive_image_url(row['image_url'])
 
         # Combine rarity + alt_art to match APITCGcom convention e.g. "LR", "LR+", "LR++"
         rarity = row['rarity'] or ''

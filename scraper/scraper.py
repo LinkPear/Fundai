@@ -2,6 +2,7 @@ import asyncio
 import re
 from playwright.async_api import async_playwright
 from db import get_connection, upsert_set, upsert_card, insert_traits, insert_zones, insert_link_conditions
+from image_host import download_and_host_image
 
 BASE_URL = "https://www.gundam-gcg.com/en/cards/"
 DETAIL_BASE = "https://www.gundam-gcg.com/en/cards/detail.php?detailSearch="
@@ -133,23 +134,31 @@ async def scrape_card_detail(page, card_id):
     if await img_el.count():
         image_url = await img_el.get_attribute("src") or ""
 
+    # Bandai's CDN blocks cross-origin image loads (Cross-Origin-Resource-Policy:
+    # same-site), so LinkPear can't load image_url directly. Download it now
+    # (with the Referer Bandai's CDN requires) and re-host it in our own
+    # Supabase Storage bucket. image_url itself is left as Bandai's own path —
+    # it's still the only reliable source for the true site listing-page id.
+    hosted_image_url = download_and_host_image(image_url, card_code)
+
     return {
-        "card_code":    card_code,
-        "rarity":       rarity,
-        "alt_art":      alt_art,
-        "name":         name,
-        "card_type":    card_type,
-        "color":        color,
-        "level":        level,
-        "cost":         cost,
-        "ap":           ap,
-        "hp":           hp,
-        "effect_text":  effect_text,
-        "source_title": source_title,
-        "image_url":    image_url,
-        "zones":        zones,
-        "traits":       traits,
-        "links":        links,
+        "card_code":         card_code,
+        "rarity":            rarity,
+        "alt_art":           alt_art,
+        "name":              name,
+        "card_type":         card_type,
+        "color":             color,
+        "level":             level,
+        "cost":              cost,
+        "ap":                ap,
+        "hp":                hp,
+        "effect_text":       effect_text,
+        "source_title":      source_title,
+        "image_url":         image_url,
+        "hosted_image_url":  hosted_image_url,
+        "zones":             zones,
+        "traits":            traits,
+        "links":             links,
     }
 
 async def run(set_codes=None):
