@@ -43,8 +43,13 @@ from db import (
     insert_link_conditions,
 )
 
-KNOWN_SET_CODES = {s["set_code"] for s in SETS}
-SET_CODE_PATTERN = re.compile(r"^[A-Z]{2,3}\d{2}$")
+# Identity for "have we seen this filter entry before" is the site's own
+# data-val id, not a human set_code — data_val is an opaque numeric string
+# (e.g. "616101") that never matched the old bracket-code-shaped regex this
+# function used to filter on, which meant this new-set detection never
+# actually fired for anything, known or new. See v1.7 roadmap notes.
+KNOWN_DATA_VALS = {s["data_val"] for s in SETS if s.get("data_val")}
+BRACKET_CODE_PATTERN = re.compile(r"\[([A-Z0-9]{2,6})\]")
 
 
 def guess_product_type(set_code):
@@ -58,26 +63,47 @@ def guess_product_type(set_code):
     return "unknown"
 
 
+def derive_set_code(text):
+    """Human-readable set_code from a filter link's visible text.
+
+    Prefers a bracketed code (e.g. "Deck Build Box Freedom Ascension [SC01]"
+    -> "SC01"), matching the convention already used for GDxx/STxx/EBxx.
+    Several site entries have no bracket at all (e.g. "Promotion card") --
+    those fall back to an upper-snake-case slug of the full label, so they
+    still get a stable, readable code instead of being silently dropped.
+    """
+    match = BRACKET_CODE_PATTERN.search(text)
+    if match:
+        return match.group(1)
+    return re.sub(r"[^A-Z0-9]+", "_", text.upper()).strip("_")
+
+
 async def get_live_set_filters(page):
-    """Scrape the set filter list on the main cards page.
-    Returns {set_code: display_name}. Anything that doesn't look like
-    a real set code (e.g. an 'All' or color filter) is skipped.
+    """Scrape the "Included In" filter dropdown on the main cards page.
+    Returns a list of {"data_val", "code", "text"} dicts, one per entry
+    (the "ALL" reset link and any entry with an empty data-val are skipped).
     """
     await page.goto(BASE_URL, wait_until="networkidle")
     await dismiss_cookie_banner(page)
 
-    filters = {}
+    seen = {}
     links = await page.locator("a[data-val]").all()
     for link in links:
-        code = await link.get_attribute("data-val")
-        if not code:
+        data_val = await link.get_attribute("data-val")
+        if not data_val:
             continue
-        code = code.strip()
-        if not SET_CODE_PATTERN.match(code):
-            continue
+        data_val = data_val.strip()
         text = (await link.inner_text()).strip()
-        filters[code] = text
-    return filters
+        if not text or text.lower().startswith("included in"):
+            continue
+        # The dropdown's DOM is duplicated (collapsed header + expanded
+        # panel) -- dedup by data_val, which is stable across both copies.
+        seen[data_val] = text
+
+    return [
+        {"data_val": data_val, "code": derive_set_code(text), "text": text}
+        for data_val, text in seen.items()
+    ]
 
 
 def site_id_for(card_code, alt_art, image_url):
@@ -137,24 +163,21 @@ async def sync():
             live_filters = await get_live_set_filters(page)
         except Exception as e:
             print(f"  WARNING: could not read the live set filter list: {e}")
-            live_filters = {}
-
-        with conn.cursor() as cur:
-            cur.execute("SELECT set_code FROM sets")
-            db_set_codes = {row[0] for row in cur.fetchall()}
+            live_filters = []
 
         target_sets = list(SETS)  # start from the known roster in scraper.py
 
-        for code, label in live_filters.items():
-            if code not in KNOWN_SET_CODES and code not in db_set_codes:
-                print(f'  NEW SET DETECTED: {code} — "{label}" (not in scraper.py SETS list)')
-                new_sets_found.append(code)
+        for f in live_filters:
+            if f["data_val"] not in KNOWN_DATA_VALS:
+                print(f'  NEW SET DETECTED: {f["code"]} — "{f["text"]}" (data-val={f["data_val"]}, not in scraper.py SETS list)')
+                new_sets_found.append(f["code"])
                 target_sets.append(
                     {
-                        "set_code": code,
-                        "name": label or code,
-                        "product_type": guess_product_type(code),
+                        "set_code": f["code"],
+                        "name": f["text"],
+                        "product_type": guess_product_type(f["code"]),
                         "release_date": None,
+                        "data_val": f["data_val"],
                     }
                 )
 
@@ -166,7 +189,7 @@ async def sync():
                 set_id = upsert_set(conn, set_data)
                 conn.commit()
 
-                live_ids = await get_card_ids_for_set(page, set_code)
+                live_ids = await get_card_ids_for_set(page, set_code, set_data.get("data_val"))
                 existing_codes = get_existing_card_codes(conn, set_id)
                 new_ids = [cid for cid in live_ids if cid not in existing_codes]
 

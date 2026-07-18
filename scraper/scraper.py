@@ -7,23 +7,39 @@ from image_host import download_and_host_image
 BASE_URL = "https://www.gundam-gcg.com/en/cards/"
 DETAIL_BASE = "https://www.gundam-gcg.com/en/cards/detail.php?detailSearch="
 
+# "data_val" is the site's own internal id for each entry in the "Included In"
+# filter dropdown (its data-val attribute) — captured via
+# scraper/debug_package_filters.py. It's the only robust way to select the
+# right filter link: unlike the visible label, it doesn't depend on the site
+# keeping a "[GDxx]"-style bracket code in the text, which several entries
+# (Edition Beta, Promotion card, Basic Cards, Other Product Card) don't have.
 SETS = [
-    {"set_code": "GD01", "name": "Newtype Rising",    "product_type": "booster", "release_date": "2025-07-25"},
-    {"set_code": "GD02", "name": "Dual Impact",       "product_type": "booster", "release_date": None},
-    {"set_code": "GD03", "name": "Steel Requiem",     "product_type": "booster", "release_date": None},
-    {"set_code": "GD04", "name": "Phantom Aria",      "product_type": "booster", "release_date": "2026-04-24"},
-    {"set_code": "GD05", "name": "Freedom Ascension", "product_type": "booster", "release_date": "2026-07-24"},
-    {"set_code": "ST01", "name": "Heroic Beginnings", "product_type": "starter", "release_date": None},
-    {"set_code": "ST02", "name": "Wings of Advance",  "product_type": "starter", "release_date": None},
-    {"set_code": "ST03", "name": "Zeon's Rush",       "product_type": "starter", "release_date": None},
-    {"set_code": "ST04", "name": "SEED Strike",       "product_type": "starter", "release_date": None},
-    {"set_code": "ST05", "name": "Iron Bloom",        "product_type": "starter", "release_date": None},
-    {"set_code": "ST06", "name": "Clan Unity",        "product_type": "starter", "release_date": None},
-    {"set_code": "ST07", "name": "Celestial Drive",   "product_type": "starter", "release_date": None},
-    {"set_code": "ST08", "name": "Flash of Radiance", "product_type": "starter", "release_date": None},
-    {"set_code": "ST09", "name": "Destiny Ignition",  "product_type": "starter", "release_date": "2026-03-27"},
-    {"set_code": "ST10", "name": "Generation Pulse",  "product_type": "starter", "release_date": None},
-    {"set_code": "EB01", "name": "Eternal Nexus",     "product_type": "extra",   "release_date": None},
+    {"set_code": "GD01", "name": "Newtype Rising",    "product_type": "booster", "release_date": "2025-07-25", "data_val": "616101"},
+    {"set_code": "GD02", "name": "Dual Impact",       "product_type": "booster", "release_date": None,         "data_val": "616102"},
+    {"set_code": "GD03", "name": "Steel Requiem",     "product_type": "booster", "release_date": None,         "data_val": "616103"},
+    {"set_code": "GD04", "name": "Phantom Aria",      "product_type": "booster", "release_date": "2026-04-24", "data_val": "616104"},
+    {"set_code": "GD05", "name": "Freedom Ascension", "product_type": "booster", "release_date": "2026-07-24", "data_val": "616105"},
+    {"set_code": "ST01", "name": "Heroic Beginnings", "product_type": "starter", "release_date": None,         "data_val": "616001"},
+    {"set_code": "ST02", "name": "Wings of Advance",  "product_type": "starter", "release_date": None,         "data_val": "616002"},
+    {"set_code": "ST03", "name": "Zeon's Rush",       "product_type": "starter", "release_date": None,         "data_val": "616003"},
+    {"set_code": "ST04", "name": "SEED Strike",       "product_type": "starter", "release_date": None,         "data_val": "616004"},
+    {"set_code": "ST05", "name": "Iron Bloom",        "product_type": "starter", "release_date": None,         "data_val": "616005"},
+    {"set_code": "ST06", "name": "Clan Unity",        "product_type": "starter", "release_date": None,         "data_val": "616006"},
+    {"set_code": "ST07", "name": "Celestial Drive",   "product_type": "starter", "release_date": None,         "data_val": "616007"},
+    {"set_code": "ST08", "name": "Flash of Radiance", "product_type": "starter", "release_date": None,         "data_val": "616008"},
+    {"set_code": "ST09", "name": "Destiny Ignition",  "product_type": "starter", "release_date": "2026-03-27", "data_val": "616009"},
+    {"set_code": "ST10", "name": "Generation Pulse",  "product_type": "starter", "release_date": None,         "data_val": "616010"},
+    {"set_code": "EB01", "name": "Eternal Nexus",     "product_type": "extra",   "release_date": None,         "data_val": "616201"},
+    # Added this session — previously invisible to sync.py's new-set detection
+    # because it keyed off data-val against a bracket-code-shaped regex
+    # (e.g. ^[A-Z]{2,3}\d{2}$), but data-val is an opaque numeric site id
+    # (see comment above), not a set code. The regex never matched anything,
+    # known or new, via that path — see gundam-pipeline-roadmap-v1.7.md.
+    {"set_code": "SC01",               "name": "Deck Build Box Freedom Ascension", "product_type": "deck_build_box", "release_date": None, "data_val": "616301"},
+    {"set_code": "OTHER_PRODUCT_CARD", "name": "Other Product Card",              "product_type": "other",           "release_date": None, "data_val": "616701"},
+    {"set_code": "EDITION_BETA",       "name": "Edition Beta",                    "product_type": "edition",         "release_date": None, "data_val": "616000"},
+    {"set_code": "BASIC_CARDS",        "name": "Basic Cards",                     "product_type": "basic",           "release_date": None, "data_val": "616801"},
+    {"set_code": "PROMOTION_CARD",     "name": "Promotion card",                  "product_type": "promo",           "release_date": None, "data_val": "616901"},
 ]
 
 def parse_int(val):
@@ -51,12 +67,20 @@ async def dismiss_cookie_banner(page):
     except:
         pass
 
-async def get_card_ids_for_set(page, set_code):
+async def get_card_ids_for_set(page, set_code, data_val=None):
     print(f"  Loading card list for {set_code}...")
     await page.goto(BASE_URL, wait_until="networkidle")
     await dismiss_cookie_banner(page)
 
-    set_link = page.locator("a[data-val]").filter(has_text=set_code)
+    if data_val:
+        # Exact match on the site's own filter id — robust regardless of how
+        # the visible label is worded (several entries have no set-code
+        # substring to match against at all, e.g. "Promotion card").
+        set_link = page.locator(f'a[data-val="{data_val}"]')
+    else:
+        # Fallback for callers that don't have a data_val on hand yet.
+        set_link = page.locator("a[data-val]").filter(has_text=set_code)
+
     if await set_link.count() == 0:
         print(f"  WARNING: No filter link found for {set_code}")
         return []
@@ -174,7 +198,7 @@ async def run(set_codes=None):
             set_id = upsert_set(conn, set_data)
             conn.commit()
 
-            card_ids = await get_card_ids_for_set(page, set_data["set_code"])
+            card_ids = await get_card_ids_for_set(page, set_data["set_code"], set_data.get("data_val"))
 
             for i, card_id in enumerate(card_ids):
                 print(f"  [{i+1}/{len(card_ids)}] {card_id}")
