@@ -1,7 +1,7 @@
 # Gundam TCG pipeline — project roadmap
 **Version:** 1.7
 **Last updated:** 2026-07-18
-**Status:** Session 6 — added 5 previously-untracked "Included In" filter entries and fixed the root-cause bug in `sync.py`'s new-set auto-detection that had silently swallowed all of them (and would have kept swallowing every future one). Local `sync.py` run confirmed clean: 367 new cards added across the 5 new entries, 0 errors, `cards.json` regenerated (1,700 cards total). Commit/push still pending — a stale `.git/index.lock` is blocking it (see Next steps).
+**Status:** Session 6 complete — added 5 previously-untracked "Included In" filter entries and fixed the root-cause bug in `sync.py`'s new-set auto-detection that had silently swallowed all of them (and would have kept swallowing every future one). Local `sync.py` run confirmed clean: 367 new cards added across the 5 new entries, 0 errors, `cards.json` regenerated (1,700 cards total). Committed and pushed to `main` (`d582832..14d4ebb`).
 
 ---
 
@@ -83,9 +83,10 @@ Confirmed via a one-off script (`scraper/debug_package_filters.py`, added this s
 ## Next steps
 
 1. ~~Run `scraper.py`/`sync.py` locally for the 5 new entries~~ — done: 367 new cards, 0 errors, `cards.json` regenerated. No SC01/GD05 collision errors surfaced during the run.
-2. **Commit and push** `scraper/scraper.py`, `scraper/sync.py`, `scraper/cards.json`, `scraper/debug_package_filters.py`, and this roadmap doc. Blocked right now by a stale `.git/index.lock` the sandbox couldn't remove (permissions) — same issue Session 4 hit once before. Fix: confirm no git process is running (`ps aux | grep git`), then `rm .git/index.lock` from a local terminal, then commit/push normally.
-3. **GD05 (Freedom Ascension, releases 2026-07-24)** — per v1.6, still needs to go live; revisit scrape status after the release date now just 6 days out.
-4. **Verify GitHub Actions' failure-email alerting actually fires** — still unverified, carried over from Session 4.
+2. ~~Commit and push~~ — done (`14d4ebb`). Hit a stale `.git/index.lock` along the way (same issue Session 4 saw once before — worth a permanent note: this keeps recurring, so if it happens a third time it may be worth figuring out what's actually leaving the lock behind rather than just clearing it each time).
+3. **LinkPear (the app side)** now has 5 new set/category rows available via the API and `cards.json` — Jordan is heading over to confirm the integration picks them up cleanly (new `product_type` values it hasn't seen before: `deck_build_box`, `other`, `edition`, `basic`, `promo`).
+4. **GD05 (Freedom Ascension, releases 2026-07-24)** — per v1.6, still needs to go live; revisit scrape status after the release date now just 6 days out.
+5. **Verify GitHub Actions' failure-email alerting actually fires** — still unverified, carried over from Session 4.
 
 ---
 
@@ -115,7 +116,7 @@ Confirmed via a one-off script (`scraper/debug_package_filters.py`, added this s
 | BASIC_CARDS | Basic Cards | basic | — | ✅ scraped, clean |
 | PROMOTION_CARD | Promotion card | promo | — | ✅ scraped, clean |
 
-**Total: 1,700 cards (367 added this session across the 5 new entries). Pending commit/push — see Next steps.**
+**Total: 1,700 cards (367 added this session across the 5 new entries). Committed and pushed to `main`.**
 
 ---
 
