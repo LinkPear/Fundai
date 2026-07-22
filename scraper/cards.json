@@ -765,7 +765,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/EB01-022.webp",
     "setName": "Eternal Nexus",
     "setCode": "EB01",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-025",
+        "name": "Gundam Exia",
+        "count": 3
+      }
+    ]
   },
   {
     "id": "EB01-EB01-022_p1",
@@ -789,7 +796,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/EB01-022_p1.webp",
     "setName": "Eternal Nexus",
     "setCode": "EB01",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-025",
+        "name": "Gundam Exia",
+        "count": 3
+      }
+    ]
   },
   {
     "id": "EB01-EB01-023",
@@ -2647,7 +2661,7 @@
     "name": "Gundam Exia",
     "rarity": "C",
     "color": "-",
-    "cardType": "UNIT・TOKEN",
+    "cardType": "UNIT TOKEN",
     "level": null,
     "cost": null,
     "ap": "2",
@@ -2973,7 +2987,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD01-026_p1.webp",
     "setName": "Edition Beta",
     "setCode": "EDITION_BETA",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-006",
+        "name": "Char's Zaku Ⅱ",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "EDITION_BETA-GD01-026_p2",
@@ -2997,7 +3018,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD01-026_p2.webp",
     "setName": "Edition Beta",
     "setCode": "EDITION_BETA",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-006",
+        "name": "Char's Zaku Ⅱ",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "EDITION_BETA-GD01-028_p1",
@@ -4053,7 +4081,24 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST01-015_p2.webp",
     "setName": "Edition Beta",
     "setCode": "EDITION_BETA",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-001",
+        "name": "Gundam",
+        "count": 1
+      },
+      {
+        "code": "T-002",
+        "name": "Guncannon",
+        "count": 1
+      },
+      {
+        "code": "T-003",
+        "name": "Guntank",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "EDITION_BETA-ST01-016_p2",
@@ -4389,7 +4434,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST03-016_p2.webp",
     "setName": "Edition Beta",
     "setCode": "EDITION_BETA",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-006",
+        "name": "Char's Zaku Ⅱ",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "EDITION_BETA-ST04-001_p2",
@@ -5493,7 +5545,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD01-026.webp",
     "setName": "Newtype Rising",
     "setCode": "GD01",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-006",
+        "name": "Char's Zaku Ⅱ",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD01-GD01-027",
@@ -6645,7 +6704,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD01-066.webp",
     "setName": "Newtype Rising",
     "setCode": "GD01",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-011",
+        "name": "Fatum-00",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD01-GD01-066_p1",
@@ -6669,7 +6735,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD01-066_p1.webp",
     "setName": "Newtype Rising",
     "setCode": "GD01",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-011",
+        "name": "Fatum-00",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD01-GD01-067",
@@ -7869,7 +7942,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD01-106.webp",
     "setName": "Newtype Rising",
     "setCode": "GD01",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-007",
+        "name": "Zaku Ⅱ",
+        "count": 2
+      }
+    ]
   },
   {
     "id": "GD01-GD01-107",
@@ -10317,7 +10397,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD02-043.webp",
     "setName": "Dual Impact",
     "setCode": "GD02",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-012",
+        "name": "Daughtress",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD02-GD02-044",
@@ -10341,7 +10428,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD02-044.webp",
     "setName": "Dual Impact",
     "setCode": "GD02",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-012",
+        "name": "Daughtress",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD02-GD02-045",
@@ -14205,7 +14299,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-020.webp",
     "setName": "Steel Requiem",
     "setCode": "GD03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-014",
+        "name": "Ad Balloon",
+        "count": 2
+      }
+    ]
   },
   {
     "id": "GD03-GD03-020_p1",
@@ -14229,7 +14330,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-020_p1.webp",
     "setName": "Steel Requiem",
     "setCode": "GD03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-014",
+        "name": "Ad Balloon",
+        "count": 2
+      }
+    ]
   },
   {
     "id": "GD03-GD03-021",
@@ -14349,7 +14457,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-024.webp",
     "setName": "Steel Requiem",
     "setCode": "GD03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-013",
+        "name": "Hy-Gogg",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD03-GD03-025",
@@ -14973,7 +15088,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-044.webp",
     "setName": "Steel Requiem",
     "setCode": "GD03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-012",
+        "name": "Daughtress",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD03-GD03-045",
@@ -15069,7 +15191,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-048.webp",
     "setName": "Steel Requiem",
     "setCode": "GD03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-020",
+        "name": "GFreD",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD03-GD03-049",
@@ -15453,7 +15582,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-060.webp",
     "setName": "Steel Requiem",
     "setCode": "GD03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-015",
+        "name": "CGS Mobile Worker",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD03-GD03-061",
@@ -16821,7 +16957,19 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-106.webp",
     "setName": "Steel Requiem",
     "setCode": "GD03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-019",
+        "name": "GQuuuuuuX (Omega Psycommu)",
+        "count": 1
+      },
+      {
+        "code": "T-018",
+        "name": "Red Gundam",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD03-GD03-107",
@@ -16869,7 +17017,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-108.webp",
     "setName": "Steel Requiem",
     "setCode": "GD03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-013",
+        "name": "Hy-Gogg",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD03-GD03-109",
@@ -17133,7 +17288,19 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-117.webp",
     "setName": "Steel Requiem",
     "setCode": "GD03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-016",
+        "name": "Graze Custom",
+        "count": 1
+      },
+      {
+        "code": "T-017",
+        "name": "Gundam Barbatos 4th Form",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD03-GD03-118",
@@ -18645,7 +18812,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD04-007.webp",
     "setName": "Phantom Aria",
     "setCode": "GD04",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-021",
+        "name": "Parts",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD04-GD04-008",
@@ -18765,7 +18939,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD04-011.webp",
     "setName": "Phantom Aria",
     "setCode": "GD04",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-021",
+        "name": "Parts",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD04-GD04-012",
@@ -18909,7 +19090,19 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD04-017.webp",
     "setName": "Phantom Aria",
     "setCode": "GD04",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-022",
+        "name": "Wire-Guided Arm",
+        "count": 2
+      },
+      {
+        "code": "T-023",
+        "name": "Zeong (Head)",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD04-GD04-017_p1",
@@ -18933,7 +19126,19 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD04-017_p1.webp",
     "setName": "Phantom Aria",
     "setCode": "GD04",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-022",
+        "name": "Wire-Guided Arm",
+        "count": 2
+      },
+      {
+        "code": "T-023",
+        "name": "Zeong (Head)",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD04-GD04-017_p2",
@@ -18957,7 +19162,19 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD04-017_p2.webp",
     "setName": "Phantom Aria",
     "setCode": "GD04",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-022",
+        "name": "Wire-Guided Arm",
+        "count": 2
+      },
+      {
+        "code": "T-023",
+        "name": "Zeong (Head)",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD04-GD04-018",
@@ -20853,7 +21070,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD04-080.webp",
     "setName": "Phantom Aria",
     "setCode": "GD04",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-024",
+        "name": "Alvaaron",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD04-GD04-081",
@@ -20877,7 +21101,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD04-081.webp",
     "setName": "Phantom Aria",
     "setCode": "GD04",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-021",
+        "name": "Parts",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD04-GD04-081_p1",
@@ -20901,7 +21132,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD04-081_p1.webp",
     "setName": "Phantom Aria",
     "setCode": "GD04",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-021",
+        "name": "Parts",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD04-GD04-082",
@@ -22101,7 +22339,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD04-121.webp",
     "setName": "Phantom Aria",
     "setCode": "GD04",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-021",
+        "name": "Parts",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD04-GD04-122",
@@ -23085,7 +23330,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD05-006.webp",
     "setName": "Freedom Ascension",
     "setCode": "GD05",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-027",
+        "name": "Pluma",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD05-GD05-007",
@@ -25965,7 +26217,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD05-126.webp",
     "setName": "Freedom Ascension",
     "setCode": "GD05",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-026",
+        "name": "Gundnode",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "GD05-GD05-127",
@@ -26469,7 +26728,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-048_p1.webp",
     "setName": "Other Product Card",
     "setCode": "OTHER_PRODUCT_CARD",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-020",
+        "name": "GFreD",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "OTHER_PRODUCT_CARD-GD03-060_p1",
@@ -26493,7 +26759,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-060_p1.webp",
     "setName": "Other Product Card",
     "setCode": "OTHER_PRODUCT_CARD",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-015",
+        "name": "CGS Mobile Worker",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "OTHER_PRODUCT_CARD-GD03-106_p1",
@@ -26517,7 +26790,19 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-106_p1.webp",
     "setName": "Other Product Card",
     "setCode": "OTHER_PRODUCT_CARD",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-019",
+        "name": "GQuuuuuuX (Omega Psycommu)",
+        "count": 1
+      },
+      {
+        "code": "T-018",
+        "name": "Red Gundam",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "OTHER_PRODUCT_CARD-GD03-117_p1",
@@ -26541,7 +26826,19 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-117_p1.webp",
     "setName": "Other Product Card",
     "setCode": "OTHER_PRODUCT_CARD",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-016",
+        "name": "Graze Custom",
+        "count": 1
+      },
+      {
+        "code": "T-017",
+        "name": "Gundam Barbatos 4th Form",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "OTHER_PRODUCT_CARD-RP-024",
@@ -28269,7 +28566,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD01-106_p1.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-007",
+        "name": "Zaku Ⅱ",
+        "count": 2
+      }
+    ]
   },
   {
     "id": "PROMOTION_CARD-GD01-118_p4",
@@ -29133,7 +29437,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-020_p3.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-014",
+        "name": "Ad Balloon",
+        "count": 2
+      }
+    ]
   },
   {
     "id": "PROMOTION_CARD-GD03-021_p1",
@@ -33333,7 +33644,24 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST01-015.webp",
     "setName": "Heroic Beginnings",
     "setCode": "ST01",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-001",
+        "name": "Gundam",
+        "count": 1
+      },
+      {
+        "code": "T-002",
+        "name": "Guncannon",
+        "count": 1
+      },
+      {
+        "code": "T-003",
+        "name": "Guntank",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "ST01-ST01-015_p1",
@@ -33357,7 +33685,24 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST01-015_p1.webp",
     "setName": "Heroic Beginnings",
     "setCode": "ST01",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-001",
+        "name": "Gundam",
+        "count": 1
+      },
+      {
+        "code": "T-002",
+        "name": "Guncannon",
+        "count": 1
+      },
+      {
+        "code": "T-003",
+        "name": "Guntank",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "ST01-ST01-016",
@@ -34221,7 +34566,19 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST02-016.webp",
     "setName": "Wings of Advance",
     "setCode": "ST02",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-005",
+        "name": "Tallgeese",
+        "count": 1
+      },
+      {
+        "code": "T-004",
+        "name": "Leo",
+        "count": 2
+      }
+    ]
   },
   {
     "id": "ST02-ST02-016_p1",
@@ -34245,7 +34602,19 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST02-016_p1.webp",
     "setName": "Wings of Advance",
     "setCode": "ST02",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-005",
+        "name": "Tallgeese",
+        "count": 1
+      },
+      {
+        "code": "T-004",
+        "name": "Leo",
+        "count": 2
+      }
+    ]
   },
   {
     "id": "ST02-T-004",
@@ -34701,7 +35070,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST03-009.webp",
     "setName": "Zeon's Rush",
     "setCode": "ST03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-007",
+        "name": "Zaku Ⅱ",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "ST03-ST03-009_p1",
@@ -34725,7 +35101,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST03-009_p1.webp",
     "setName": "Zeon's Rush",
     "setCode": "ST03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-007",
+        "name": "Zaku Ⅱ",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "ST03-ST03-010",
@@ -35037,7 +35420,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST03-016.webp",
     "setName": "Zeon's Rush",
     "setCode": "ST03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-006",
+        "name": "Char's Zaku Ⅱ",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "ST03-ST03-016_p1",
@@ -35061,7 +35451,14 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST03-016_p1.webp",
     "setName": "Zeon's Rush",
     "setCode": "ST03",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-006",
+        "name": "Char's Zaku Ⅱ",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "ST03-T-006",
@@ -35661,7 +36058,19 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST04-012.webp",
     "setName": "SEED Strike",
     "setCode": "ST04",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-008",
+        "name": "Aile Strike Gundam",
+        "count": 1
+      },
+      {
+        "code": "T-010",
+        "name": "Sword Strike Gundam",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "ST04-ST04-012_p1",
@@ -35685,7 +36094,19 @@
     "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST04-012_p1.webp",
     "setName": "SEED Strike",
     "setCode": "ST04",
-    "game": "gundam"
+    "game": "gundam",
+    "producedTokens": [
+      {
+        "code": "T-008",
+        "name": "Aile Strike Gundam",
+        "count": 1
+      },
+      {
+        "code": "T-010",
+        "name": "Sword Strike Gundam",
+        "count": 1
+      }
+    ]
   },
   {
     "id": "ST04-ST04-013",

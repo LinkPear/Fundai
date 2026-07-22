@@ -7,6 +7,18 @@ from image_host import download_and_host_image
 BASE_URL = "https://www.gundam-gcg.com/en/cards/"
 DETAIL_BASE = "https://www.gundam-gcg.com/en/cards/detail.php?detailSearch="
 
+# Bandai's site is inconsistent about the separator in multi-word card types:
+# most read "UNIT TOKEN" but some come through as "UNIT・TOKEN" (fullwidth
+# middle dot). Left as-is, the same conceptual type splits into two distinct
+# strings, so anything keying off card_type (token detection, deck legality)
+# silently misses the odd one out. Fold the Japanese dot variants to a plain
+# space and collapse whitespace so the type is always canonical.
+_CARD_TYPE_DOTS = str.maketrans({"・": " ", "･": " ", "·": " "})
+
+
+def normalize_card_type(value):
+    return re.sub(r"\s+", " ", (value or "").translate(_CARD_TYPE_DOTS)).strip()
+
 # "data_val" is the site's own internal id for each entry in the "Included In"
 # filter dropdown (its data-val attribute) — captured via
 # scraper/debug_package_filters.py. It's the only robust way to select the
@@ -133,7 +145,7 @@ async def scrape_card_detail(page, card_id):
             value = (await dd.first.inner_text()).strip()
             details[label] = value
 
-    card_type    = details.get("type", "")
+    card_type    = normalize_card_type(details.get("type", ""))
     color        = details.get("color", "")
     level        = parse_int(details.get("lv.") or details.get("lv"))
     cost         = parse_int(details.get("cost"))

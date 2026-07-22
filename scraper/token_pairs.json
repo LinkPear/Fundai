@@ -1,0 +1,240 @@
+[
+  {
+    "producer_code": "EB01-022",
+    "producer_name": "Gundam Exia (EX)",
+    "token_code": "T-025",
+    "token_name": "Gundam Exia",
+    "count": 3
+  },
+  {
+    "producer_code": "GD01-026",
+    "producer_name": "Char's Zaku Ⅱ",
+    "token_code": "T-006",
+    "token_name": "Char's Zaku Ⅱ",
+    "count": 1
+  },
+  {
+    "producer_code": "ST01-015",
+    "producer_name": "White Base",
+    "token_code": "T-001",
+    "token_name": "Gundam",
+    "count": 1
+  },
+  {
+    "producer_code": "ST01-015",
+    "producer_name": "White Base",
+    "token_code": "T-002",
+    "token_name": "Guncannon",
+    "count": 1
+  },
+  {
+    "producer_code": "ST01-015",
+    "producer_name": "White Base",
+    "token_code": "T-003",
+    "token_name": "Guntank",
+    "count": 1
+  },
+  {
+    "producer_code": "ST03-016",
+    "producer_name": "Falmel",
+    "token_code": "T-006",
+    "token_name": "Char's Zaku Ⅱ",
+    "count": 1
+  },
+  {
+    "producer_code": "GD01-066",
+    "producer_name": "Justice Gundam",
+    "token_code": "T-011",
+    "token_name": "Fatum-00",
+    "count": 1
+  },
+  {
+    "producer_code": "GD01-106",
+    "producer_name": "Fortress Defense",
+    "token_code": "T-007",
+    "token_name": "Zaku Ⅱ",
+    "count": 2
+  },
+  {
+    "producer_code": "GD02-043",
+    "producer_name": "Daughtress Weapon",
+    "token_code": "T-012",
+    "token_name": "Daughtress",
+    "count": 1
+  },
+  {
+    "producer_code": "GD02-044",
+    "producer_name": "Daughtress Command",
+    "token_code": "T-012",
+    "token_name": "Daughtress",
+    "count": 1
+  },
+  {
+    "producer_code": "GD03-020",
+    "producer_name": "Zaku Ⅱ FZ",
+    "token_code": "T-014",
+    "token_name": "Ad Balloon",
+    "count": 2
+  },
+  {
+    "producer_code": "GD03-024",
+    "producer_name": "Hy-Gogg",
+    "token_code": "T-013",
+    "token_name": "Hy-Gogg",
+    "count": 1
+  },
+  {
+    "producer_code": "GD03-044",
+    "producer_name": "Daughtress Flyer",
+    "token_code": "T-012",
+    "token_name": "Daughtress",
+    "count": 1
+  },
+  {
+    "producer_code": "GD03-048",
+    "producer_name": "GFreD",
+    "token_code": "T-020",
+    "token_name": "GFreD",
+    "count": 1
+  },
+  {
+    "producer_code": "GD03-060",
+    "producer_name": "CGS Mobile Worker (Commander Type)",
+    "token_code": "T-015",
+    "token_name": "CGS Mobile Worker",
+    "count": 1
+  },
+  {
+    "producer_code": "GD03-106",
+    "producer_name": "M.A.V. Tactics",
+    "token_code": "T-019",
+    "token_name": "GQuuuuuuX (Omega Psycommu)",
+    "count": 1
+  },
+  {
+    "producer_code": "GD03-106",
+    "producer_name": "M.A.V. Tactics",
+    "token_code": "T-018",
+    "token_name": "Red Gundam",
+    "count": 1
+  },
+  {
+    "producer_code": "GD03-108",
+    "producer_name": "How Many Miles to the Battlefield?",
+    "token_code": "T-013",
+    "token_name": "Hy-Gogg",
+    "count": 1
+  },
+  {
+    "producer_code": "GD03-117",
+    "producer_name": "Orga's Order",
+    "token_code": "T-016",
+    "token_name": "Graze Custom",
+    "count": 1
+  },
+  {
+    "producer_code": "GD03-117",
+    "producer_name": "Orga's Order",
+    "token_code": "T-017",
+    "token_name": "Gundam Barbatos 4th Form",
+    "count": 1
+  },
+  {
+    "producer_code": "GD04-007",
+    "producer_name": "Victory Gundam Hexa",
+    "token_code": "T-021",
+    "token_name": "Parts",
+    "count": 1
+  },
+  {
+    "producer_code": "GD04-011",
+    "producer_name": "Victory Gundam",
+    "token_code": "T-021",
+    "token_name": "Parts",
+    "count": 1
+  },
+  {
+    "producer_code": "GD04-017",
+    "producer_name": "Zeong",
+    "token_code": "T-022",
+    "token_name": "Wire-Guided Arm",
+    "count": 2
+  },
+  {
+    "producer_code": "GD04-017",
+    "producer_name": "Zeong",
+    "token_code": "T-023",
+    "token_name": "Zeong (Head)",
+    "count": 1
+  },
+  {
+    "producer_code": "GD04-080",
+    "producer_name": "Alvatore",
+    "token_code": "T-024",
+    "token_name": "Alvaaron",
+    "count": 1
+  },
+  {
+    "producer_code": "GD04-081",
+    "producer_name": "Üso Ewin",
+    "token_code": "T-021",
+    "token_name": "Parts",
+    "count": 1
+  },
+  {
+    "producer_code": "GD04-121",
+    "producer_name": "Reineforce Jr.",
+    "token_code": "T-021",
+    "token_name": "Parts",
+    "count": 1
+  },
+  {
+    "producer_code": "GD05-006",
+    "producer_name": "Hashmal",
+    "token_code": "T-027",
+    "token_name": "Pluma",
+    "count": 1
+  },
+  {
+    "producer_code": "GD05-126",
+    "producer_name": "Quiet Zero",
+    "token_code": "T-026",
+    "token_name": "Gundnode",
+    "count": 1
+  },
+  {
+    "producer_code": "ST02-016",
+    "producer_name": "Corsica Base",
+    "token_code": "T-005",
+    "token_name": "Tallgeese",
+    "count": 1
+  },
+  {
+    "producer_code": "ST02-016",
+    "producer_name": "Corsica Base",
+    "token_code": "T-004",
+    "token_name": "Leo",
+    "count": 2
+  },
+  {
+    "producer_code": "ST03-009",
+    "producer_name": "Gouf",
+    "token_code": "T-007",
+    "token_name": "Zaku Ⅱ",
+    "count": 1
+  },
+  {
+    "producer_code": "ST04-012",
+    "producer_name": "Striker Pack",
+    "token_code": "T-008",
+    "token_name": "Aile Strike Gundam",
+    "count": 1
+  },
+  {
+    "producer_code": "ST04-012",
+    "producer_name": "Striker Pack",
+    "token_code": "T-010",
+    "token_name": "Sword Strike Gundam",
+    "count": 1
+  }
+]

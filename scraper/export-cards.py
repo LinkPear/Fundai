@@ -5,6 +5,8 @@ import psycopg2
 import psycopg2.extras
 from dotenv import load_dotenv
 
+from token_pairs import compute_pairs, producers_map
+
 load_dotenv()
 
 def get_connection():
@@ -50,6 +52,17 @@ def derive_code(card_code, alt_art, image_url):
     elif alt_art == 'SP':
         return f"{card_code}_SP"
     return card_code
+
+# Same normalization the scraper applies (scraper.normalize_card_type): fold
+# fullwidth dot variants to a space so "UNIT・TOKEN" and "UNIT TOKEN" don't
+# split into two types. Applied here too so cards.json is always canonical even
+# for DB rows scraped before that fix landed (no re-scrape required).
+_CARD_TYPE_DOTS = str.maketrans({"・": " ", "･": " ", "·": " "})
+
+
+def normalize_card_type(value):
+    return re.sub(r"\s+", " ", (value or "").translate(_CARD_TYPE_DOTS)).strip()
+
 
 def derive_image_url(image_url):
     """
@@ -144,7 +157,7 @@ def export():
             "name": row['name'],
             "rarity": rarity_display,                      # e.g. "LR", "LR+", "C"
             "color": row['color'],
-            "cardType": row['card_type'],
+            "cardType": normalize_card_type(row['card_type']),
             "level": str(row['level']) if row['level'] is not None else None,
             "cost": str(row['cost']) if row['cost'] is not None else None,
             "ap": str(row['ap']) if row['ap'] is not None else None,
@@ -161,11 +174,38 @@ def export():
             "game": "gundam",
         })
 
+    # --- Token pairing -------------------------------------------------
+    # Derive which cards create Unit Tokens straight from the effect text we
+    # just exported (see token_pairs.py). We attach the result inline to each
+    # producing card as `producedTokens` so the app can read it without a join,
+    # and also write a standalone token_pairs.json for review/debugging.
+    # A producing card_code can have several art-variant rows; every one gets
+    # the same list. cardType == "UNIT TOKEN" cards are the tokens themselves.
+    pairs, unresolved = compute_pairs(cards)
+    tokens_by_producer = producers_map(pairs)
+    for card in cards:
+        toks = tokens_by_producer.get(card['cardCode'])
+        if toks:
+            card['producedTokens'] = toks
+
     output_path = os.path.join(os.path.dirname(__file__), 'cards.json')
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(cards, f, ensure_ascii=False, indent=2)
 
+    pairs_path = os.path.join(os.path.dirname(__file__), 'token_pairs.json')
+    with open(pairs_path, 'w', encoding='utf-8') as f:
+        json.dump(pairs, f, ensure_ascii=False, indent=2)
+
+    producer_count = len({p['producer_code'] for p in pairs})
     print(f"Exported {len(cards)} cards to {output_path}")
+    print(f"Token pairing: {producer_count} producing cards, "
+          f"{len(pairs)} token links -> {pairs_path}")
+    if unresolved:
+        print(f"  WARNING: {len(unresolved)} token reference(s) did not "
+              f"resolve — check token_pairs.py / a name mismatch:")
+        for u in unresolved:
+            print(f"    {u['producer_code']} {u['producer_name']}: "
+                  f"wants [{u['wanted_name']}] ({u['reason']})")
 
 if __name__ == "__main__":
     export()
