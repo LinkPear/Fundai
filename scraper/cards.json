@@ -28113,8 +28113,8 @@
     "game": "gundam"
   },
   {
-    "id": "PROMOTION_CARD-GD01-013_p3",
-    "code": "GD01-013_p3",
+    "id": "PROMOTION_CARD-GD01-013_p2",
+    "code": "GD01-013_p2",
     "cardCode": "GD01-013",
     "altArt": "",
     "name": "Gundam",
@@ -28130,8 +28130,8 @@
     "trait": "(Earth Federation), (White Base Team)",
     "link": "[Amuro Ray]",
     "sourceTitle": "Mobile Suit Gundam",
-    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD01-013_p3.webp",
-    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD01-013_p3.webp",
+    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD01-013_p2.webp",
+    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD01-013_p2.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
     "game": "gundam"
@@ -28696,8 +28696,8 @@
     "game": "gundam"
   },
   {
-    "id": "PROMOTION_CARD-GD02-029_p3",
-    "code": "GD02-029_p3",
+    "id": "PROMOTION_CARD-GD02-029_p1",
+    "code": "GD02-029_p1",
     "cardCode": "GD02-029",
     "altArt": "",
     "name": "Gundam AGE-1 Normal",
@@ -28713,8 +28713,8 @@
     "trait": "(Earth Federation), (AGE System)",
     "link": null,
     "sourceTitle": "Mobile Suit Gundam AGE",
-    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD02-029_p3.webp",
-    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD02-029_p3.webp",
+    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD02-029_p1.webp",
+    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD02-029_p1.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
     "game": "gundam"
@@ -29032,8 +29032,8 @@
     "game": "gundam"
   },
   {
-    "id": "PROMOTION_CARD-GD02-091_p3",
-    "code": "GD02-091_p3",
+    "id": "PROMOTION_CARD-GD02-091_p2",
+    "code": "GD02-091_p2",
     "cardCode": "GD02-091",
     "altArt": "",
     "name": "Haman Karn",
@@ -29049,8 +29049,8 @@
     "trait": "(Neo Zeon), (Newtype)",
     "link": null,
     "sourceTitle": "Mobile Suit Z Gundam",
-    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD02-091_p3.webp",
-    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD02-091_p3.webp",
+    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD02-091_p2.webp",
+    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD02-091_p2.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
     "game": "gundam"
@@ -29951,8 +29951,8 @@
     "game": "gundam"
   },
   {
-    "id": "PROMOTION_CARD-GD03-118_p4",
-    "code": "GD03-118_p4",
+    "id": "PROMOTION_CARD-GD03-118_p2",
+    "code": "GD03-118_p2",
     "cardCode": "GD03-118",
     "altArt": "",
     "name": "Awakened Potential",
@@ -29963,13 +29963,13 @@
     "cost": "1",
     "ap": null,
     "hp": null,
-    "effect": "【Burst】Add this card to your hand.\n【Action】Choose 1 rested enemy Unit that is Lv.4 or lower. Return it to its owner's hand. Then, if there are 2 or more cards with \"Awakened Potential\" in their card name in your trash, you may choose 1 friendly Unit. It gains <Blocker> during this turn.\n(Rest this Unit to change the attack target to it.)",
+    "effect": "【Burst】Add this card to your hand.\n【Action】Choose 1 rested enemy Unit that is Lv.4 or lower. Return it to its owner' s hand. Then, if there are 2 or more cards with \" Awakened Potential\" in their card name in your trash, you may choose 1 friendly Unit. It gains <Blocker> during this turn.\n(Rest this Unit to change the attack target to it.)",
     "zone": null,
     "trait": null,
     "link": null,
-    "sourceTitle": "Mobile Suit Gundam SEED",
-    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-118_p4.webp",
-    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-118_p4.webp",
+    "sourceTitle": "After War Gundam X",
+    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-118_p2.webp",
+    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/GD03-118_p2.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
     "game": "gundam"
@@ -30887,8 +30887,8 @@
     "game": "gundam"
   },
   {
-    "id": "PROMOTION_CARD-ST01-001_p7",
-    "code": "ST01-001_p7",
+    "id": "PROMOTION_CARD-ST01-001_p6",
+    "code": "ST01-001_p6",
     "cardCode": "ST01-001",
     "altArt": "",
     "name": "Gundam",
@@ -30904,8 +30904,8 @@
     "trait": "(Earth Federation), (White Base Team)",
     "link": "[Amuro Ray]",
     "sourceTitle": "Mobile Suit Gundam",
-    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST01-001_p7.webp",
-    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST01-001_p7.webp",
+    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST01-001_p6.webp",
+    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST01-001_p6.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
     "game": "gundam"
@@ -30959,8 +30959,8 @@
     "game": "gundam"
   },
   {
-    "id": "PROMOTION_CARD-ST01-014_p7",
-    "code": "ST01-014_p7",
+    "id": "PROMOTION_CARD-ST01-014_p2",
+    "code": "ST01-014_p2",
     "cardCode": "ST01-014",
     "altArt": "",
     "name": "Unforeseen Incident",
@@ -30975,9 +30975,9 @@
     "zone": null,
     "trait": null,
     "link": null,
-    "sourceTitle": "Mobile Suit Gundam UC",
-    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST01-014_p7.webp",
-    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST01-014_p7.webp",
+    "sourceTitle": "Mobile Suit Gundam SEED",
+    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST01-014_p2.webp",
+    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST01-014_p2.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
     "game": "gundam"
@@ -31199,8 +31199,8 @@
     "game": "gundam"
   },
   {
-    "id": "PROMOTION_CARD-ST04-010_p4",
-    "code": "ST04-010_p4",
+    "id": "PROMOTION_CARD-ST04-010_p3",
+    "code": "ST04-010_p3",
     "cardCode": "ST04-010",
     "altArt": "",
     "name": "Kira Yamato",
@@ -31216,8 +31216,8 @@
     "trait": "(Earth Alliance), (Coordinator)",
     "link": null,
     "sourceTitle": "Mobile Suit Gundam SEED",
-    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST04-010_p4.webp",
-    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST04-010_p4.webp",
+    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST04-010_p3.webp",
+    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST04-010_p3.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
     "game": "gundam"
@@ -31463,8 +31463,8 @@
     "game": "gundam"
   },
   {
-    "id": "PROMOTION_CARD-ST06-009_p3",
-    "code": "ST06-009_p3",
+    "id": "PROMOTION_CARD-ST06-009_p2",
+    "code": "ST06-009_p2",
     "cardCode": "ST06-009",
     "altArt": "",
     "name": "Amate Yuzuriha (Machu)",
@@ -31480,8 +31480,8 @@
     "trait": "(Clan), (Newtype)",
     "link": null,
     "sourceTitle": "Mobile Suit Gundam GQuuuuuuX",
-    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST06-009_p3.webp",
-    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST06-009_p3.webp",
+    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST06-009_p2.webp",
+    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/ST06-009_p2.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
     "game": "gundam"
