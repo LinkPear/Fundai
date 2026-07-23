@@ -1,0 +1,52 @@
+name: Backfill where_to_get
+
+# One-off / on-demand backfill of the cards.where_to_get column.
+# sync.py can't do this — it only scrapes cards missing from the DB, and these
+# all already exist. Trigger manually from the Actions tab (Run workflow).
+# Optionally pass a space-separated list of set codes to limit the run.
+on:
+  workflow_dispatch:
+    inputs:
+      set_codes:
+        description: 'Optional: space-separated set codes to limit the backfill (blank = all sets)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  backfill:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: scraper
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          grep -v '^asyncio' requirements.txt > requirements.filtered.txt
+          pip install -r requirements.filtered.txt
+
+      - name: Install Playwright browser
+        run: playwright install --with-deps chromium
+
+      - name: Run where_to_get backfill
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python backfill_where_to_get.py ${{ github.event.inputs.set_codes }}

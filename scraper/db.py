@@ -34,11 +34,11 @@ def upsert_card(conn, card_data):
             INSERT INTO cards (
                 set_id, card_code, name, card_type, color,
                 level, cost, ap, hp, effect_text,
-                source_title, image_url, hosted_image_url, rarity, alt_art, scraped_at
+                source_title, where_to_get, image_url, hosted_image_url, rarity, alt_art, scraped_at
             ) VALUES (
                 %(set_id)s, %(card_code)s, %(name)s, %(card_type)s, %(color)s,
                 %(level)s, %(cost)s, %(ap)s, %(hp)s, %(effect_text)s,
-                %(source_title)s, %(image_url)s, %(hosted_image_url)s, %(rarity)s, %(alt_art)s, NOW()
+                %(source_title)s, %(where_to_get)s, %(image_url)s, %(hosted_image_url)s, %(rarity)s, %(alt_art)s, NOW()
             )
             ON CONFLICT (set_id, card_code, rarity, alt_art) DO UPDATE SET
                 name = EXCLUDED.name,
@@ -50,6 +50,7 @@ def upsert_card(conn, card_data):
                 hp = EXCLUDED.hp,
                 effect_text = EXCLUDED.effect_text,
                 source_title = EXCLUDED.source_title,
+                where_to_get = EXCLUDED.where_to_get,
                 image_url = EXCLUDED.image_url,
                 -- Never let a failed download (hosted_image_url = NULL) wipe out
                 -- a previously-hosted image on re-scrape.

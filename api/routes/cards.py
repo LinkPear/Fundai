@@ -91,7 +91,7 @@ def get_card(card_id: uuid.UUID):
             cur.execute("""
                 SELECT c.id, c.set_id, c.card_code, c.name, c.card_type, c.color,
                        c.level, c.cost, c.ap, c.hp, c.rarity, c.alt_art,
-                       c.image_url, c.source_title, c.effect_text, c.scraped_at
+                       c.image_url, c.source_title, c.effect_text, c.where_to_get, c.scraped_at
                 FROM cards c
                 WHERE c.id = %s
             """, (str(card_id),))

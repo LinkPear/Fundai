@@ -113,7 +113,7 @@ async def get_card_ids_for_set(page, set_code, data_val=None):
     print(f"  Found {len(card_ids)} cards for {set_code}")
     return card_ids
 
-async def scrape_card_detail(page, card_id):
+async def scrape_card_detail(page, card_id, skip_image=False):
     url = DETAIL_BASE + card_id
     await page.goto(url, wait_until="networkidle")
 
@@ -152,6 +152,7 @@ async def scrape_card_detail(page, card_id):
     ap           = parse_int(details.get("ap"))
     hp           = parse_int(details.get("hp"))
     source_title = details.get("source title", "")
+    where_to_get = details.get("where to get it", "")
 
     # Effect text has its own container
     effect_text = await get_text(".dataTxt.isRegular")
@@ -175,7 +176,12 @@ async def scrape_card_detail(page, card_id):
     # (with the Referer Bandai's CDN requires) and re-host it in our own
     # Supabase Storage bucket. image_url itself is left as Bandai's own path —
     # it's still the only reliable source for the true site listing-page id.
-    hosted_image_url = download_and_host_image(image_url, card_code)
+    #
+    # skip_image: callers doing a field-only backfill (e.g.
+    # backfill_where_to_get.py) pass True to avoid re-downloading and
+    # re-uploading ~1700 images that are already hosted. hosted_image_url
+    # comes back None, which upsert_card's COALESCE leaves untouched.
+    hosted_image_url = None if skip_image else download_and_host_image(image_url, card_code)
 
     return {
         "card_code":         card_code,
@@ -190,6 +196,7 @@ async def scrape_card_detail(page, card_id):
         "hp":                hp,
         "effect_text":       effect_text,
         "source_title":      source_title,
+        "where_to_get":      where_to_get,
         "image_url":         image_url,
         "hosted_image_url":  hosted_image_url,
         "zones":             zones,

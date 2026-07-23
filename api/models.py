@@ -38,6 +38,7 @@ class CardSummary(BaseModel):
 
 class CardDetail(CardSummary):
     effect_text: Optional[str]
+    where_to_get: Optional[str]
     scraped_at: Optional[datetime]
     zones: list[str] = []
     traits: list[str] = []

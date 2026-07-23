@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS cards (
     hp INT,
     effect_text TEXT,
     source_title TEXT,
+    where_to_get TEXT,
     image_url TEXT,
     hosted_image_url TEXT,
     rarity TEXT NOT NULL,
