@@ -22,13 +22,17 @@ CREATE TABLE IF NOT EXISTS cards (
     hp INT,
     effect_text TEXT,
     source_title TEXT,
-    where_to_get TEXT,
+    where_to_get TEXT NOT NULL DEFAULT '',
     image_url TEXT,
     hosted_image_url TEXT,
     rarity TEXT NOT NULL,
     alt_art TEXT NOT NULL DEFAULT '',
     scraped_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    UNIQUE(set_id, card_code, rarity, alt_art)
+    -- where_to_get is part of the printing identity: a single card_code can have
+    -- several distinct promo printings at the same rarity/alt_art (e.g. Store
+    -- Tournament Participant Pack vs Booster Release Event), distinguished only by
+    -- where_to_get. Leaving it out of the key let one overwrite the other on upsert.
+    UNIQUE(set_id, card_code, rarity, alt_art, where_to_get)
 );
 
 CREATE TABLE IF NOT EXISTS traits (

@@ -239,4 +239,10 @@ async def run(set_codes=None):
     print("\nDone.")
 
 if __name__ == "__main__":
-    asyncio.run(run())
+    # Optional set-code filter, e.g.:
+    #   python scraper.py                              # full scrape (all sets)
+    #   python scraper.py PROMOTION_CARD               # only the promo category
+    #   python scraper.py PROMOTION_CARD OTHER_PRODUCT_CARD
+    import sys
+    codes = sys.argv[1:] or None
+    asyncio.run(run(codes))
