@@ -36606,8 +36606,8 @@
     "game": "gundam"
   },
   {
-    "id": "PROMOTION_CARD-T-022_p1",
-    "code": "T-022_p1",
+    "id": "PROMOTION_CARD-T-022_p2",
+    "code": "T-022_p2",
     "cardCode": "T-022",
     "altArt": "",
     "name": "Wire-Guided Arm",
@@ -36624,15 +36624,15 @@
     "link": null,
     "sourceTitle": "Mobile Suit Gundam",
     "whereToGet": "Store Championships 26-27 Season 2",
-    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/T-022_p1.webp",
-    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/T-022_p1.webp",
+    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/T-022_p2.webp",
+    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/T-022_p2.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
     "game": "gundam"
   },
   {
-    "id": "PROMOTION_CARD-T-022_p3",
-    "code": "T-022_p3",
+    "id": "PROMOTION_CARD-T-022_p4",
+    "code": "T-022_p4",
     "cardCode": "T-022",
     "altArt": "+",
     "name": "Wire-Guided Arm",
@@ -36649,8 +36649,8 @@
     "link": null,
     "sourceTitle": "Mobile Suit Gundam",
     "whereToGet": "WORLD CHAMPIONSHIPS 26-27 Season 2Upper Ranks Prize",
-    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/T-022_p3.webp",
-    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/T-022_p3.webp",
+    "imageSmall": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/T-022_p4.webp",
+    "imageLarge": "https://wfpnqpbkmquzowopzuid.supabase.co/storage/v1/object/public/card-images/T-022_p4.webp",
     "setName": "Promotion card",
     "setCode": "PROMOTION_CARD",
     "game": "gundam"
