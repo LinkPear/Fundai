@@ -166,7 +166,10 @@ def export():
             "effect": row['effect_text'],
             "zone": ' '.join(zones) if zones else None,
             "trait": ', '.join(f"({t})" for t in traits) if traits else None,
-            "link": ' '.join(f"[{l}]" for l in links) if links else None,
+            # Pilot names export as "[Name]"; trait links are stored with their
+            # parentheses ("(Titans)") and export as-is. e.g. "[Amuro Ray]",
+            # "(Titans)", or "[Kai Shiden] [Hayato Kobayashi]".
+            "link": ' '.join(l if l.startswith('(') else f"[{l}]" for l in links) if links else None,
             "sourceTitle": row['source_title'],
             "whereToGet": row['where_to_get'],
             "imageSmall": image,

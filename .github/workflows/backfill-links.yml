@@ -1,0 +1,65 @@
+name: Backfill link conditions (trait links)
+
+# One-off / on-demand: re-reads every card's Link line so trait links like
+# "(Titans) Trait" are stored (the scraper used to drop them), then regenerates
+# cards.json and commits it. Trigger manually from the Actions tab (Run workflow).
+on:
+  workflow_dispatch:
+    inputs:
+      set_codes:
+        description: 'Optional: space-separated set codes to limit the backfill (blank = all sets)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write  # commits the regenerated cards.json
+
+jobs:
+  backfill:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    defaults:
+      run:
+        working-directory: scraper
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          grep -v '^asyncio' requirements.txt > requirements.filtered.txt
+          pip install -r requirements.filtered.txt
+
+      - name: Install Playwright browser
+        run: playwright install --with-deps chromium
+
+      - name: Run link backfill + re-export
+        env:
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_PORT: ${{ secrets.DB_PORT }}
+          DB_NAME: ${{ secrets.DB_NAME }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          python backfill_links.py ${{ github.event.inputs.set_codes }}
+          python export-cards.py
+
+      - name: Commit and push cards.json if it changed
+        run: |
+          if ! git diff --quiet cards.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add cards.json
+            git commit -m "Backfill trait links in cards.json"
+            git push
+          else
+            echo "No changes to cards.json — nothing to commit."
+          fi

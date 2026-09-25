@@ -113,6 +113,24 @@ async def get_card_ids_for_set(page, set_code, data_val=None):
     print(f"  Found {len(card_ids)} cards for {set_code}")
     return card_ids
 
+def parse_links(link_raw):
+    """Parse a card's Link line into link_conditions entries.
+
+    The Link line names specific pilots ("[Amuro Ray]", "[Kai Shiden] [Hayato
+    Kobayashi]") and/or a pilot trait ("(Titans) Trait"). Pilot names are stored
+    bare ("Amuro Ray"); traits keep their parentheses ("(Titans)") so the two
+    kinds stay distinguishable in link_conditions.pilot_name and in the export.
+    Bracketed names are removed before looking for traits, because some names
+    contain parentheses themselves (e.g. "[Amate Yuzuriha (Machu)]").
+    """
+    if not link_raw or link_raw.strip() == "-":
+        return []
+    names = [n.strip() for n in re.findall(r'\[([^\]]+)\]', link_raw)]
+    rest = re.sub(r'\[[^\]]*\]', ' ', link_raw)
+    traits = [f"({t.strip()})" for t in re.findall(r'\(([^)]+)\)', rest)]
+    return names + traits
+
+
 async def scrape_card_detail(page, card_id, skip_image=False):
     url = DETAIL_BASE + card_id
     await page.goto(url, wait_until="networkidle")
@@ -164,7 +182,7 @@ async def scrape_card_detail(page, card_id, skip_image=False):
     traits = re.findall(r'\(([^)]+)\)', traits_raw) if traits_raw and traits_raw != "-" else []
 
     link_raw = details.get("link", "")
-    links = re.findall(r'\[([^\]]+)\]', link_raw) if link_raw and link_raw != "-" else []
+    links = parse_links(link_raw)
 
     image_url = ""
     img_el = page.locator(".cardImage img").first
